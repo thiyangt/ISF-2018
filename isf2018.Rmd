@@ -53,6 +53,7 @@ warehouses.
 Develop a framework that automates the selection of the most appropriate forecasting model for a given time series by using an array of \textcolor{red}{features} computed from the time series.
 \end{block}
 
+\pause
 \begin{itemize}[<+->]
 
 \item \textbf{Basic idea:}
@@ -255,11 +256,19 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 & & & & & & & & & \\[-0.25cm]
 Observed series &         M1 &        181 &        203 &        617 &            &         M3 &        645 &        756 &       1428 \\
      New series &         M3 &        645 &        756 &       1428 &            &         M1 &        181 &        203 &        617 \\
+    
 \bottomrule
 \end{tabular}
 \end{table}
 
+# Experiment 1: Distribution of time series in the PCA space
+\colorbox{black}{\color{white}{observed - M1}} \colorbox{ao(english)}{simulated} \colorbox{orange}{new - M3}
+  \centerline{\includegraphics[width=\textwidth,height=7.5cm,keepaspectratio]{figures/exp1pca-1.pdf}}
 
+
+# Experiment 2: Distribution of time series in the PCA space
+\colorbox{black}{\color{white}{observed - M3}} \colorbox{ao(english)}{simulated} \colorbox{aureolin}{subset} \colorbox{orange}{new - M1}
+  \centerline{\includegraphics[width=\textwidth,height=7.5cm,keepaspectratio]{figures/exp2pca-1.pdf}}
 
 # Discussion and Conclusions
 
