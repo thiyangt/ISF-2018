@@ -288,7 +288,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
     ) + scale_fill_brewer(breaks=c(1,0), 
     labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
 , palette = "Set1") + 
-  theme(axis.title.y=element_blank(), legend.title=element_blank())
+  theme(axis.title.y=element_blank(), legend.title=element_blank(),
+            text = element_text(size=20))
 ```
 
 # Results: Quarterly
@@ -311,7 +312,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
     ) + scale_fill_brewer(breaks=c(1,0), 
     labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
 , palette = "Set1") + 
-  theme(axis.title.y=element_blank(), legend.title=element_blank())
+  theme(axis.title.y=element_blank(), legend.title=element_blank(),
+        text = element_text(size=20))
 ```
 
 # Results: Monthly
@@ -333,7 +335,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
     ) + scale_fill_brewer(breaks=c(1,0), 
     labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
 , palette = "Set1") + 
-  theme(axis.title.y=element_blank(), legend.title=element_blank())
+  theme(axis.title.y=element_blank(), legend.title=element_blank(),
+        text = element_text(size=20))
 ```
 
 
