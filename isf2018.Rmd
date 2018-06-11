@@ -220,7 +220,7 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 
 \centerline{\includegraphics[width=\paperwidth]{figures/fw10.png}}
 
-# FFOMS: Random-forest classifier
+# FFORMS: Random-forest classifier
 
 \centerline{\includegraphics[width=\paperwidth]{figures/fw11.png}}
 
@@ -245,22 +245,21 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 - We run two experiments for each case.
 
 \begin{table}[!htp]
-\centering\footnotesize\tabcolsep=0.2cm
+\centering\tiny\tabcolsep=0.2cm
 \def\yes{$\checkmark$}
 \captionsetup{labelformat=empty}
 \label{tbl:Mcomps}
-\begin{tabular}{lccccr@{\hspace*{0.3cm}}cccc}
+\begin{tabular}{lrrrrr@{\hspace*{0.2cm}}rrrr}
 \toprule
                 &  \multicolumn{ 4}{c}{Experiment 1} & & \multicolumn{ 4}{c}{Experiment 2} \\
                 &    Source  &    Y  & Q  &    M &            &    Source  &    Y  & Q  &    M \\\cline{2-5}\cline{7-10}
-& & & & & & & & & \\[-0.25cm]
-Observed series &         M1 &        181 &        203 &        617 &            &         M3 &        645 &        756 &       1428 \\
-     New series &         M3 &        645 &        756 &       1428 &            &         M1 &        181 &        203 &        617 \\
-    
+& & & & & & & & & \\[-0.1cm]
+\colorbox{black}{\color{white}{Observed series}} &         M1 &       181 &        203 &        617 &            &         M3 &        645 &        756 &       1428 \\
+\colorbox{ao(english)}{Simulated series} &          &       362000 &        406000 &        123400 &            &          &        1290000 &        1512000&       285600 \\
+\colorbox{orange}{New series} &         M3 &    645 &       756 &       1428 &            &         M1 &        181 &        203 &       617 \\
 \bottomrule
 \end{tabular}
 \end{table}
-
 # Experiment 1: Distribution of time series in the PCA space
 \colorbox{black}{\color{white}{observed - M1}} \colorbox{ao(english)}{simulated} \colorbox{orange}{new - M3}
   \centerline{\includegraphics[width=\textwidth,height=7.5cm,keepaspectratio]{figures/exp1pca-1.pdf}}
@@ -362,3 +361,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
  \vspace{0.15cm}
  \centerline{https://github.com/thiyangt/seer}
  
+\pause
+
+\textbf{Reference:}
+Talagala, TS, RJ Hyndman & G Athanasopoulos (2018). Meta-learning how to forecast time
+series. Technical Report 6/18, Monash University.
