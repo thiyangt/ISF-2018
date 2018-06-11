@@ -349,7 +349,7 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
 
 \begin{itemize}[<+->]
 
-\vfill\item FFORMS: framework for forecast-model selection using meta-learning based on time series features.
+\vfill\item FFORMS: framework for forecast model selection using meta-learning based on time series features.
 
 \vfill\item FFORMS algorithm uses the knowledge of the past performance of candidate forecast models on a collection of time series in order to identify the best forecasting method for a new series. 
 
@@ -374,6 +374,9 @@ devtools::install_github("thiyangt/seer")
 library(seer)
 ```
 \pause
+
+##
+paper: https://robjhyndman.com/publications/fforms/
 
 ##
 
