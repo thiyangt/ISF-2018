@@ -343,11 +343,11 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
 
 \vfill\item FFORMS: framework for forecast-model selection using meta-learning based on time series features.
 
-\vfill\item Our method almost always performs better than common benchmark methods, and better than the best-performing methods from the M3 competition.
+\vfill\item FFORMS algorithm uses the knowledge of the past performance of candidate forecast models on a collection of time series in order to identify the best forecasting method for a new series. 
 
-\vfill\item The framework is general and can be applied to any large collection of time series.
+\vfill\item For real-time forecasting, our framework involves only the calculation of features, the selection of a forecast method based on the FFORMS random forest classifier, and the calculation of the forecasts from the chosen model.
 
-\vfill\item Advantage: Not necessary to estimate several different models for the data and undertake an empirical evaluation of their forecast accuracy on a given time series.
+\vfill\item We have also introduced a simple set of time series features that are useful in identifying the "best" forecast method for a given time series.
 
 \end{itemize}
 
@@ -357,8 +357,17 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
  \vspace{0.15cm}
 \centerline{\includegraphics[width=\textwidth,height=3.5cm,keepaspectratio]{figures/seer.png}}
 \vspace{0.3cm}
- \centerline{available at:}
- \vspace{0.15cm}
- \centerline{https://github.com/thiyangt/seer}
- 
+ \centerline{available at: \textcolor{blue}{\underline{https://github.com/thiyangt/seer}}}
+
+## Installation
+
+```r
+devtools::install_github("thiyangt/seer")
+library(seer)
+```
+\pause
+
+##
+
+Email: thiyanga.talagala@monash.edu
 
