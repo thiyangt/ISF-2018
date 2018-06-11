@@ -245,7 +245,7 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 
 # Application to M competition data
 
-- Proposed algorithm is applied to yearly, quarterly and monthly series separately
+- Proposed algorithm is applied to yearly, quarterly and monthly series separately.
 
 - We run two experiments for each case.
 
