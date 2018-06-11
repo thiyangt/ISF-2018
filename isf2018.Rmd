@@ -1,13 +1,11 @@
 ---
 title: "Meta-learning how to forecast time series"
 author: 
-- Thiyanga Talagala
-- Rob J Hyndman
+- Thiyanga S Talagala \newline
+- Rob J Hyndman \newline
 - George Athanasopoulos
 institute: |
-        | Monash University
-        | Australia
-      
+        | Monash University, Australia
 date: "International Symposium on Forecasting, 2018"
 output: 
   beamer_presentation:
@@ -179,11 +177,11 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 
 \textcolor{red}{Offline}
 
-- Classification algorithm is trained
+- A classification algorithm (the meta-learner) is trained.
 
 \textcolor{red}{Online}
 
-- Use the classification algorithm to select the "best" forecast method for new time series
+- Calculate the features of a time series and use the pre-trained classifier to identify the best forecasting method.
 
 
 # FFORMS: population
