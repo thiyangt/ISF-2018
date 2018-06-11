@@ -52,7 +52,7 @@ warehouses.
 # Time series features
 
 \begin{block}{Objective}
-Develop a framework that automates the selection of the most appropriate forecasting model for a given time series by using an array of \textcolor{red}{features} computed from the time series.
+Develop a framework that automates the selection of the most appropriate forecasting method for a given time series by using an array of \textcolor{red}{features} computed from the time series.
 \end{block}
 
 \pause
