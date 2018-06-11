@@ -270,6 +270,74 @@ Observed series &         M1 &        181 &        203 &        617 &           
 \colorbox{black}{\color{white}{observed - M3}} \colorbox{ao(english)}{simulated} \colorbox{aureolin}{subset} \colorbox{orange}{new - M1}
   \centerline{\includegraphics[width=\textwidth,height=7.5cm,keepaspectratio]{figures/exp2pca-1.pdf}}
 
+# Results: Yearly
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(ggplot2)
+method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "Theta",
+           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "Theta")
+Rank = c(1.50, 1.50, 3.33, 5.00, 8.00, 7.00, 3.67, 6.00,
+         3.50, 2.50, 5.83, 4.67, 9.00, 8.00, 1.00, 3.50)
+class=c(0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1)
+df <- data.frame(method=method, Rank=Rank, class=class)
+ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
+  geom_bar(position="dodge",stat="identity") + 
+  coord_flip() +
+   scale_x_discrete(
+    limits=c("WN", "RW", "auto.arima", "ets", "Theta", "RWD", "RF-class priors", "RF-unbalanced"),
+    labels=c("WN", "RW", "auto.arima", "ets", "Theta", "RWD", "RF-class priors", "RF-unbalanced")
+    ) + scale_fill_brewer(breaks=c(1,0), 
+    labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
+, palette = "Set1") + 
+  theme(axis.title.y=element_blank(), legend.title=element_blank())
+```
+
+# Results: Quarterly
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(ggplot2)
+method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive",
+           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive")
+Rank = c(1.00, 2.63, 5.25, 3.00, 10.00, 7.50, 5.38, 8.63, 3.88, 7.75, 2.25,
+3.13, 4.75, 3.75, 10.00, 7.00, 6.50, 8.34, 2.50, 6.75)
+class=c(0,0,0,0,0,0,0,0,0, 0, 1,1,1,1,1,1,1,1, 1, 1)
+df <- data.frame(method=method, Rank=Rank, class=class)
+ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
+  geom_bar(position="dodge",stat="identity") + 
+  coord_flip() +
+   scale_x_discrete(
+    limits=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
+    labels=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
+    ) + scale_fill_brewer(breaks=c(1,0), 
+    labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
+, palette = "Set1") + 
+  theme(axis.title.y=element_blank(), legend.title=element_blank())
+```
+
+# Results: Monthly
+
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(ggplot2)
+method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive",
+           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive")
+Rank = c(1.77, 2.83, 4.94, 3.44, 10.00, 7.25, 8.61, 7.38, 2.27, 6.47, 3.22, 2.00, 2.83, 2.72, 10.00, 8.03, 6.89, 7.89, 4.22, 7.19)
+class=c(0,0,0,0,0,0,0,0,0, 0, 1,1,1,1,1,1,1,1, 1, 1)
+df <- data.frame(method=method, Rank=Rank, class=class)
+ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
+  geom_bar(position="dodge",stat="identity") + 
+  coord_flip() +
+   scale_x_discrete(
+    limits=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
+    labels=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
+    ) + scale_fill_brewer(breaks=c(1,0), 
+    labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
+, palette = "Set1") + 
+  theme(axis.title.y=element_blank(), legend.title=element_blank())
+```
+
+
 # Discussion and Conclusions
 
 \begin{itemize}[<+->]
@@ -293,3 +361,4 @@ Observed series &         M1 &        181 &        203 &        617 &           
  \centerline{available at:}
  \vspace{0.15cm}
  \centerline{https://github.com/thiyangt/seer}
+ 
