@@ -341,7 +341,7 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
 
 \begin{itemize}[<+->]
 
-\vfill\item Proposed a novel framework for forecast-model selection using meta-learning based on time series features.
+\vfill\item FFORMS: framework for forecast-model selection using meta-learning based on time series features.
 
 \vfill\item Our method almost always performs better than common benchmark methods, and better than the best-performing methods from the M3 competition.
 
@@ -361,8 +361,4 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
  \vspace{0.15cm}
  \centerline{https://github.com/thiyangt/seer}
  
-\pause
 
-\textbf{Reference:}
-Talagala, TS, RJ Hyndman & G Athanasopoulos (2018). Meta-learning how to forecast time
-series. Technical Report 6/18, Monash University.
