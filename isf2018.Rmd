@@ -1,10 +1,14 @@
 ---
 title: "Meta-learning how to forecast time series"
-author: |
-        | Thiyanga S. Talagala
-        | Rob J Hyndman
-        | George Athanasopoulos
-date: "Monash University, Australia"
+author: 
+- Thiyanga Talagala
+- Rob J Hyndman
+- George Athanasopoulos
+institute: |
+        | Monash University
+        | Australia
+      
+date: "International Symposium on Forecasting, 2018"
 output: 
   beamer_presentation:
      theme: "Warsaw"
@@ -173,10 +177,13 @@ ggplot(df, aes(x = trend, y = seasonality)) +
 
 **FFORMS:** **F**eature-based **FOR**ecast **M**odel **S**election
 
-\textcolor{red}{Offline}: Classification algorithm is trained
+\textcolor{red}{Offline}
 
-\textcolor{red}{Online}: Use the classification algorithm to select appropriate forecast-models for new time series
+- Classification algorithm is trained
 
+\textcolor{red}{Online}
+
+- Use the classification algorithm to select the "best" forecast method for new time series
 
 
 # FFORMS: population
@@ -297,8 +304,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive",
-           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive")
+method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "Snaive",
+           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "Snaive")
 Rank = c(1.00, 2.63, 5.25, 3.00, 10.00, 7.50, 5.38, 8.63, 3.88, 7.75, 2.25,
 3.13, 4.75, 3.75, 10.00, 7.00, 6.50, 8.34, 2.50, 6.75)
 class=c(0,0,0,0,0,0,0,0,0, 0, 1,1,1,1,1,1,1,1, 1, 1)
@@ -307,8 +314,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
   geom_bar(position="dodge",stat="identity") + 
   coord_flip() +
    scale_x_discrete(
-    limits=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
-    labels=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
+    limits=c("WN","RW",  "RWD","STL-AR", "Snaive", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
+    labels=c("WN",  "RW", "RWD","STL-AR", "Snaive", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
     ) + scale_fill_brewer(breaks=c(1,0), 
     labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
 , palette = "Set1") + 
@@ -321,8 +328,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(ggplot2)
-method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive",
-           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "snaive")
+method = c("RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "Snaive",
+           "RF-unbalanced", "RF-class priors", "auto.arima", "ets", "WN", "RW", "RWD", "STL-AR", "Theta", "Snaive")
 Rank = c(1.77, 2.83, 4.94, 3.44, 10.00, 7.25, 8.61, 7.38, 2.27, 6.47, 3.22, 2.00, 2.83, 2.72, 10.00, 8.03, 6.89, 7.89, 4.22, 7.19)
 class=c(0,0,0,0,0,0,0,0,0, 0, 1,1,1,1,1,1,1,1, 1, 1)
 df <- data.frame(method=method, Rank=Rank, class=class)
@@ -330,8 +337,8 @@ ggplot(data=df, aes(x=method,y=Rank,fill=factor(class))) +
   geom_bar(position="dodge",stat="identity") + 
   coord_flip() +
    scale_x_discrete(
-    limits=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
-    labels=c("WN","STL-AR", "RW", "snaive", "RWD", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
+    limits=c("WN","RW", "RWD","STL-AR",  "Snaive", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced"),
+    labels=c("WN","RW", "RWD", "STL-AR",  "Snaive", "auto.arima", "ets","Theta", "RF-class priors", "RF-unbalanced")
     ) + scale_fill_brewer(breaks=c(1,0), 
     labels=c("Experiment 1 (new: M3)","Experiment 2 (new: M1)")
 , palette = "Set1") + 
